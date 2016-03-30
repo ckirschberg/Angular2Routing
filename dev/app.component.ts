@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from "angular2/router";
-import {RouteConfig} from "angular2/router";
+import {RouteConfig, RouteParams} from "angular2/router";
 import {InternshipsListComponent} from './internships/internships-list.component'
 import {NewEditInternshipsComponent} from './internships/newEditInternships.component'
 
@@ -10,7 +10,7 @@ import {NewEditInternshipsComponent} from './internships/newEditInternships.comp
     <header>
         <nav>
             <a [routerLink]="['Internships']">Internships</a>
-            <a [routerLink]="['NewInternships']">New Internships</a>
+            <a [routerLink]="['NewEditInternship', { internship: null} ]">New Internships</a>
         </nav>
     </header>
     <div class="main">
@@ -23,7 +23,7 @@ import {NewEditInternshipsComponent} from './internships/newEditInternships.comp
 
 @RouteConfig([
     {path: '/internships', name: "Internships", component: InternshipsListComponent, useAsDefault: true},
-    {path: '/newinternship', name: "NewInternships", component: NewEditInternshipsComponent}
+    {path: '/neweditinternship/:internship', name: "NewEditInternship", component: NewEditInternshipsComponent}
 ])
 export class AppComponent {
 

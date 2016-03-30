@@ -1,4 +1,6 @@
 import {Component} from 'angular2/core';
+import {RouteParams} from "angular2/router";
+import {OnInit} from "angular2/core";
 
 @Component({
     selector: "new-edit-internship",
@@ -7,5 +9,10 @@ import {Component} from 'angular2/core';
     `,
 })
 export class NewEditInternshipsComponent {
+    internship: {};
 
+    constructor(private params: RouteParams) {
+        this.internship = params.get("internship");
+        console.log(this.internship);
+    }
 }
