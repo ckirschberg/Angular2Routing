@@ -9,7 +9,7 @@ import {NewEditInternshipsComponent} from './internships/newEditInternships.comp
     template: `
     <header>
         <nav>
-            <a [routerLink]="['Internships']">Internships</a>
+            <a [routerLink]="['Internships','SubView1']">Internships</a>
             <a [routerLink]="['NewEditInternship', { internship: null} ]">New Internships</a>
         </nav>
     </header>
@@ -22,7 +22,7 @@ import {NewEditInternshipsComponent} from './internships/newEditInternships.comp
 })
 
 @RouteConfig([
-    {path: '/internships', name: "Internships", component: InternshipsListComponent, useAsDefault: true},
+    {path: '/internships/...', name: "Internships", component: InternshipsListComponent, useAsDefault: true},
     {path: '/neweditinternship/:internship', name: "NewEditInternship", component: NewEditInternshipsComponent}
 ])
 export class AppComponent {
